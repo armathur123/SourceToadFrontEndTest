@@ -56,12 +56,14 @@ var arr = [
 ];
 
 function mutateArray(a) {
-  for (const element of a) {
+  return returnArray = a.filter((element) => {
+    return element.guest_type == 'guest';
+  }).map((element) => {
     element.room_no = element.guest_booking.room_no;
     element.some_array = element.guest_booking.some_array.reduce((a, b) => a+b);
     delete element.guest_booking;
-  }
-  return a;
+    return element;
+  });
 }
 
 $(document).ready(function() {
