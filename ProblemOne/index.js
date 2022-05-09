@@ -58,7 +58,7 @@ var arr = [
 function mutateArray(a) {
   for (const element of a) {
     element.room_no = element.guest_booking.room_no;
-    element.some_array = element.guest_booking.some_array;
+    element.some_array = element.guest_booking.some_array.reduce((a, b) => a+b);
     delete element.guest_booking;
   }
   return a;
