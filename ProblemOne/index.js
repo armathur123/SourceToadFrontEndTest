@@ -56,7 +56,12 @@ var arr = [
 ];
 
 function mutateArray(a) {
-  
+  for (const element of a) {
+    element.room_no = element.guest_booking.room_no;
+    element.some_array = element.guest_booking.some_array;
+    delete element.guest_booking;
+  }
+  return a;
 }
 
 $(document).ready(function() {
