@@ -63,6 +63,19 @@ function mutateArray(a) {
     element.some_array = element.guest_booking.some_array.reduce((a, b) => a+b);
     delete element.guest_booking;
     return element;
+  }).sort((a, b) => {
+    if (a.firstName > b.firstName) {
+      return 1;
+    } else if (a.firstName < b.firstName) {
+        return -1;
+    }
+    else {
+      if (a.last_name > b.last_name) {
+        return 1;
+      } else if (a.last_name < b.last_name) {
+          return -1;
+      }
+    }
   });
 }
 
